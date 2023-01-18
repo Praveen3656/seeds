@@ -1,0 +1,398 @@
+* {
+  font-family: system-ui;
+}
+.Header {
+  background-color: #3e755f;
+  height: 75px;
+  width: 100% !important;
+}
+.logo {
+  width: 10%;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  font-size: 23px;
+}
+.logo img {
+  width: 120px;
+}
+.home-container {
+  width: 90%;
+  margin: 5px auto;
+}
+.sidemenu {
+  width: 100% !important;
+  height: auto;
+
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}
+.menutitle {
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+  color: #ed3237;
+  text-decoration: none;
+}
+.sidebar-content {
+  padding: 0 !important;
+}
+
+.dropdown-item {
+  color: #000 !important;
+  font-weight: bold !important;
+}
+.accordion-item {
+  padding: 5px !important;
+}
+.navname {
+  color: #000 !important;
+  font-weight: bold !important;
+  padding: 10px !important;
+}
+.accordion-button {
+  padding: 0 !important;
+  background-color: #fff !important;
+}
+.accordion-body a {
+  color: #000 !important;
+  font-weight: bold !important;
+}
+.hhTtXw {
+  padding: 0 !important;
+}
+
+.srikarseeds {
+  background: #fff !important;
+  color: #ed3237 !important;
+}
+.p-img {
+  width: 100%;
+  margin: 0 10px;
+  float: left;
+}
+.product-img {
+  width: 20%;
+  float: left;
+}
+.product-details {
+  float: left;
+  width: 70%;
+  margin-left: 30px;
+}
+.p-title {
+  margin: 5px 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.product-select {
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.accordion-item:first-of-type {
+  border-radius: 0 !important;
+}
+.kmSAxt {
+  background-color: #fff !important;
+}
+.section {
+  width: 95%;
+  margin: 0 auto;
+}
+.producttitle {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px;
+  border-bottom: 1px solid #cccc;
+  margin-left: 10px;
+  color: #3e755f;
+}
+.productDetails {
+  width: 98%;
+  margin: 8px;
+  padding: 2px 8px;
+  border: 1px solid #cccccc61;
+}
+
+.p-img {
+  width: 100%;
+}
+.product_title {
+  margin: 0px 3px;
+  font-weight: bold;
+}
+
+.unitsspan {
+  width: 61px !important;
+  padding: 0 !important;
+  margin: 6px;
+  display: block;
+}
+.accordion-body {
+  padding: 8px !important;
+  font-size: 13px;
+}
+.section-row {
+  margin: 0 !important;
+}
+.selectunit {
+  width: 35%;
+  float: left;
+}
+.untisection {
+  padding: 0 !important;
+  width: 30px !important;
+  float: left;
+}
+.selectunit select {
+  height: 29px;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+.unitsspan p {
+  text-align: center;
+  margin: 5px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+.selectunit select:after {
+  border: none !important;
+}
+
+.units {
+  border-top: 1px solid #ccc;
+  padding-top: 5px !important;
+  margin-top: 18px;
+}
+.kmSAxt {
+  width: 100% !important;
+}
+.accordion-item:last-of-type .accordion-collapse {
+  margin-left: 10px;
+}
+
+.p-details {
+  width: 100%;
+  margin: 5px 0;
+  float: left;
+}
+.pro-details {
+  width: 70%;
+  margin: 5px 0;
+}
+.p-details p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 3px;
+  width: auto;
+  float: left;
+}
+.units_inc {
+  background: #fff;
+  font-size: 14px;
+  border: 1px solid #ccd;
+  display: block;
+  width: 20px;
+  font-weight: bold;
+  padding: 0;
+  height: 20px;
+  text-align: center;
+}
+
+.add {
+  float: left;
+}
+.add button {
+  float: right;
+}
+
+.product-box {
+  height: 106px;
+  margin-bottom: 10px !important;
+  width: 100%;
+  clear: both;
+  border-bottom: 1px solid #ccccccb3;
+}
+
+.add span {
+  float: right;
+  padding: 1px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.addtocart {
+  float: right;
+  width: 28%;
+}
+
+.addtocart button {
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #3e755f;
+  color: #fff;
+}
+.carticon {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ed3237;
+  padding: 2px;
+}
+.carticon a {
+  color: #ed3237 !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.carticon {
+  float: right;
+}
+
+.emptycart {
+  margin: 10px;
+  color: #ed3237;
+}
+.cartdetails {
+  width: 94%;
+  margin: 7px auto;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+.remove {
+  width: 65px !important;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  float: right !important;
+  margin-left: 11px;
+  background-color: #3e755f;
+  color: #fff;
+}
+.placeorder_bnt {
+  width: 50%;
+  margin: 10px auto;
+  background-color: #3e755f;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.shipping_adderss {
+  margin: 0 8px;
+  float: left;
+}
+.billing_adderss {
+  margin-top: 12px;
+  width: 100%;
+}
+.sadderss {
+  border: 1px solid #ccc;
+  padding: 5px;
+  font-size: 10px;
+  font-weight: bold;
+}
+.order_bnt {
+  width: 100%;
+  text-align: center;
+}
+.title {
+  font-size: 14px;
+  color: #ed3237;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.orders {
+}
+.orderid {
+  margin: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.orderid span {
+  padding: 5px;
+}
+.details {
+  width: 97%;
+  margin: 0 auto;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+.details-bnt {
+  float: right;
+}
+.detailsclick {
+  padding: 5px;
+  background-color: #3e755f;
+  color: #fff;
+  width: 50px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.getdetails {
+  background-color: #3e755f;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #fff;
+  float: right;
+}
+.list {
+}
+.back {
+  margin: 5px 10px;
+  display: block;
+}
+.back a {
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+.sadderss {
+  width: 250px;
+}
+.add-text {
+  white-space: nowrap;
+  width: 50px;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.fulladderss {
+  width: 90%;
+  font-size: 10px;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+.fulladderss small {
+  text-decoration: underline;
+}
+.quntityerror {
+  font-size: 12px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.cart-image{
+width: 100%;
+}
+.cart-box1{
+  width: 30% !important;
+  float: left;
+}
+.cart-box2{
+  width: 68% !important;
+  float: left;
+}
+.cart-box2 span {
+font-size: 14px;
+}
