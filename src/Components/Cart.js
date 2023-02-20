@@ -6,11 +6,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { removecart, newcart, decrement } from "../Slices/counterSlice";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { URL } from "./Apis";
 
 const Cart = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const count = useSelector((state) => state.counter.cartnew);
+
   //console.log(count);
   // const uniquecarts = count.filter(
   //   (obj, index) =>
@@ -18,7 +20,7 @@ const Cart = () => {
   // );
 
   const [cartitems, setCartitems] = useState(count);
-  //console.log(cartitems);
+  console.log(cartitems);
 
   // console.log(unique);
 
@@ -30,6 +32,10 @@ const Cart = () => {
   const [orderfail, setOrderfail] = useState(false);
   const [biil, setBill] = useState();
 
+  const [clear,setClear] =useState();
+  var getuseridsession = sessionStorage.getItem("useridsession");
+
+  console.log(getuseridsession);
   // let pp = cartitems.filter( (ele, ind) => ind === cartitems.findIndex( elem => elem.products === ele.products))
   const setIncrement = (id, index) => {
     const newitems = [...cartitems];
@@ -71,9 +77,9 @@ const Cart = () => {
   };
 
   const requesrshipadderss = { userId: 8951789539, addressTypeId: 2 };
-  // console.log(requesrshipadderss);
+  console.log(requesrshipadderss);
   useEffect(() => {
-    fetch("http://18.60.186.245:8080/api/v1/user_address", {
+    fetch(`${URL}/api/v1/user_address`, {
       method: "POST",
       body: JSON.stringify(requesrshipadderss),
       headers: {
@@ -84,10 +90,10 @@ const Cart = () => {
       .then((json) => setShipadderss(json));
   }, [0]);
 
-  // console.log(shipadderss);
+   console.log(shipadderss);
   const requesrbillingadderss = { userId: 8951789539, addressTypeId: 1 };
   useEffect(() => {
-    fetch("http://18.60.186.245:8080/api/v1/user_address", {
+    fetch(`${URL}/api/v1/user_address`, {
       method: "POST",
       body: JSON.stringify(requesrbillingadderss),
       headers: {
@@ -108,7 +114,8 @@ const Cart = () => {
 
   const placeorder = async () => {
     let removeitems = [...cartitems];
-    // console.log(removeitems);
+     
+     
     let productOrder = removeitems.map((item) => {
       let obj = {
         productUnitId: item.products,
@@ -118,15 +125,17 @@ const Cart = () => {
     });
 
     const requestplaceorder = {
-      userId: 8951789540,
+      userId: getuseridsession,
       billingAddress: selectbillingadderss,
       shippingAddress: selectshipadderss,
       productOrderModel: productOrder,
     };
 
+    console.log(requestplaceorder);
+
     try {
       const placeOrder_request = await axios.post(
-        "http://18.60.186.245:8080/api/v1/place_order",
+        `${URL}/api/v1/place_order`,
         requestplaceorder,
         {
           headers: {
@@ -137,6 +146,8 @@ const Cart = () => {
       console.log("place_order_resposne", placeOrder_request.status);
       if (placeOrder_request.status === 200) {
         navigate("/Success");
+        dispatch(removecart(removeitems.products));
+        dispatch(decrement());
       } else {
         setOrderfail(true);
       }
@@ -151,6 +162,7 @@ const Cart = () => {
       <div className="Header">
         <Row className="section-row">
           <Col lg={6}>
+          <Link to="/"><span className="logout">Logout</span></Link>
             <div className="logo">
               <img src={logo} alt="logo"></img>
             </div>
@@ -158,11 +170,10 @@ const Cart = () => {
           </Col>
         </Row>
       </div>
-
+         
       <div className="orders">
-        <p className="title">Cart</p>
         <span className="back">
-          <Link to="/">Back</Link>
+          <p onClick={() => navigate(-1)}>Back</p>
         </span>
       </div>
 
@@ -183,7 +194,7 @@ const Cart = () => {
           <p className="emptycart">
             <center>
               Your Cart is Empty <br />
-              <Link to="/">Home</Link>
+              <Link to="/Header">Home</Link>
             </center>
           </p>
         ) : (
@@ -195,14 +206,27 @@ const Cart = () => {
           <div className="cartdetails">
             <Row>
               <Col lg={3} className="cart-box1">
-                <img className="cart-image" src={item.product_img}></img>
+                <img
+                  className="cart-image"
+                  src={`https://srikarseeds.s3.ap-south-2.amazonaws.com/images/products/${item.productid}.png`}
+                ></img>
               </Col>
               <Col lg={3} className="cart-box2">
-                <span>Product Name: {item.productname}</span><br/>
-                <span>Quantity : <span>{item.quantity}</span><br/>
-                <span>MRP: {item.billingPrice}</span><br/>
-                <span>Weight: {item.packsize} {item.packunit}</span><br/>
-                <span>Billing Price: {item.billingPrice * item.quantity}</span><br/>
+                <span>Product Name: {item.productname}</span>
+                <br />
+                <span>
+                  Quantity : <span>{item.quantity}</span>
+                  <br />
+                  <span>MRP: {item.billingPrice}</span>
+                  <br />
+                  <span>
+                    Weight: {item.packsize} {item.packunit}
+                  </span>
+                  <br />
+                  <span>
+                    Billing Price: {item.billingPrice * item.quantity}
+                  </span>
+                  <br />
                   <div className="add">
                     <button
                       className="units_inc"
@@ -222,7 +246,6 @@ const Cart = () => {
                   </div>
                 </span>
 
-                
                 <button
                   className="remove"
                   value={item.products}
@@ -242,9 +265,10 @@ const Cart = () => {
             <div className="placeorder">
               <div className="shipping_adderss">
                 <small>Select Shipping Adderss</small>
-                <br />
-                <select className="sadderss" onChange={(e) => shipping(e)}>
+                 <br />
+                 <select className="sadderss" onChange={(e) => shipping(e)}>
                   <option>--select--</option>
+                  
                   {shipadderss.map((sitem, id) => {
                     return (
                       <option key={id} value={sitem.addressId}>
@@ -252,6 +276,7 @@ const Cart = () => {
                       </option>
                     );
                   })}
+
                 </select>
                 {shipadderss.map((fitem) =>
                   fitem.addressId == selectshipadderss ? (

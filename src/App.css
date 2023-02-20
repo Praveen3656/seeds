@@ -5,6 +5,14 @@
   background-color: #3e755f;
   height: 75px;
   width: 100% !important;
+  position: fixed;
+  top: 0;
+}
+
+.Header1{
+  background-color: #3e755f;
+  height: 75px;
+  width: 100% !important;
 }
 .logo {
   width: 10%;
@@ -67,7 +75,7 @@
   color: #ed3237 !important;
 }
 .p-img {
-  width: 100%;
+  width: 70%;
   margin: 0 10px;
   float: left;
 }
@@ -78,7 +86,7 @@
 .product-details {
   float: left;
   width: 70%;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 .p-title {
   margin: 5px 0;
@@ -98,25 +106,30 @@
 }
 .section {
   width: 95%;
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+.back{
+  color: #000;
 }
 .producttitle {
-  font-size: 18px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 5px;
+  padding: 5px 0;
   border-bottom: 1px solid #cccc;
   margin-left: 10px;
   color: #3e755f;
+  margin: 10px 0;
 }
 .productDetails {
-  width: 98%;
-  margin: 8px;
+  width: 100%;
   padding: 2px 8px;
   border: 1px solid #cccccc61;
+  
 }
 
 .p-img {
-  width: 100%;
+  width: 70%;
 }
 .product_title {
   margin: 0px 3px;
@@ -224,7 +237,16 @@
 
 .addtocart {
   float: right;
-  width: 28%;
+  width: 35%;
+  margin: 10px 0;
+}
+.pagebox{
+  width: max-content;
+  overflow: scroll;
+}
+.page{
+  width: 100%;
+  overflow: scroll !important;
 }
 
 .addtocart button {
@@ -237,13 +259,35 @@
   color: #fff;
 }
 .carticon {
-  font-size: 15px;
+  float: right;
+  position: fixed;
+  right: 0;
+  color: red!important;
+  width: 100%;
+  background: #3e755f;
+  float: right !important;
+  text-align: right;
+  padding-right: 9px;
   font-weight: bold;
-  color: #ed3237;
-  padding: 2px;
+  z-index: 999999;
+  height: 30px;
+}
+.profilenomargin p{
+  font-size: 14px !important;
+  font-weight: bold !important;
+  margin: 0px 0px !important;
+  margin-top: 55px !important;
+  margin-left: 1px !important;
+  border: 1px solid #ccc !important;
+  width: 45px !important;
+  padding: 5px !important;
+}
+
+.cart{
+  margin-top: 10px;
 }
 .carticon a {
-  color: #ed3237 !important;
+  color: red !important;
   text-decoration: none;
   cursor: pointer;
 }
@@ -254,7 +298,8 @@
 
 .emptycart {
   margin: 10px;
-  color: #ed3237;
+  color: #333;
+  margin-top: 105px;
 }
 .cartdetails {
   width: 94%;
@@ -285,6 +330,7 @@
 .shipping_adderss {
   margin: 0 8px;
   float: left;
+  width: 98%;
 }
 .billing_adderss {
   margin-top: 12px;
@@ -295,6 +341,8 @@
   padding: 5px;
   font-size: 10px;
   font-weight: bold;
+  width: 90%;
+  font-size: 12px;
 }
 .order_bnt {
   width: 100%;
@@ -309,6 +357,18 @@
   border-bottom: 1px solid #ccc;
 }
 .orders {
+  margin-top: 85px;
+}
+
+.passwordsection{
+  margin-top: 85px;
+}
+.nomargin{
+  margin-top: 0 !important;
+}
+.nomargin p{
+  margin-top: 0 !important;
+  font-size: 18px !important;
 }
 .orderid {
   margin: 5px;
@@ -355,9 +415,7 @@
   text-decoration: none;
   cursor: pointer;
 }
-.sadderss {
-  width: 250px;
-}
+
 .add-text {
   white-space: nowrap;
   width: 50px;
@@ -371,15 +429,21 @@
   font-weight: bold;
   border: 1px solid #ccc;
   margin: 10px 0;
+  font-size: 14px;
 }
 .fulladderss small {
   text-decoration: underline;
 }
 .quntityerror {
   font-size: 12px;
-  text-align: center;
-  color: red;
+  color: #fff;
   font-weight: bold;
+  position: fixed;
+  top: 79px;
+  z-index: 0;
+  width: 61% !important;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .cart-image{
@@ -395,4 +459,171 @@ width: 100%;
 }
 .cart-box2 span {
 font-size: 14px;
+}
+.navheader{
+  width: 100%;
+  margin: 10px 0;
+  height: 18px;
+  margin-top: 105px;
+  }
+
+.navheader p{
+  font-size: 12px;
+  font-weight: bold;
+  margin: 6px 0px;
+  margin-top: 75px;
+
+}
+.navheader a{
+  color: #333;
+  padding: 2px;
+  margin: 2px;
+
+  font-size: 12px;
+  margin: 3px 1px !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+.fas{
+  font-size: 8px !important;
+}
+.homenav{
+  margin: 0 4px !important;
+}
+.catname{
+  margin: 7px 1px !important;
+}
+.home{
+  
+}
+
+.navheader ul{
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+.Loginpage{
+  width: 100%;
+  margin-top: 95px;
+ 
+ }
+ .loginform{
+   width: 95%;
+   margin: 4% auto;
+   padding: 10px 0; 
+   border: 1px solid #ccc;
+   box-shadow: 1px 2px 4px 1px #33333394;
+ }
+ .box{
+   padding: 10px;
+     width: 100%;
+     margin: 10px;
+ }
+ .box label {
+  width: 100px;
+  font-size: 12px;
+ }
+ .error{
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+ }
+
+ .profilenomargin{
+  margin-top: 0;
+ }
+
+ .logout{
+  float: right;
+  margin: 20px 1px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0;
+ }
+ .passwordbox{
+  width: 58%;
+  float: left;
+ }
+ .passwordlabel{
+  float: left;
+ }
+ .passwordbox input{
+  width: 142px !important;
+ }
+ .passwordshow{
+  position: absolute;
+  right: 34px;
+  margin-top: 2px;
+ }
+
+ .search {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 11px;
+}
+
+.search input {
+  margin-left: 11px;
+  text-transform: lowercase;
+}
+
+
+ .pagebutton{
+  cursor: pointer;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 6px 15px;
+}
+.selpagebg {
+  background: #3e755f;
+  color: #fff;
+
+}
+ .box input {
+  padding: 9px;
+  background: #fff !important;
+  width: 58%;
+  font-size: 11px;
+  border: 1px solid #ccc;
+ }
+ .loginbnt{
+   width:45%;
+ }
+ .reg{
+ 
+ }
+ .file{
+   width: 99%;
+ }
+ .error{
+   color: red;
+ }
+
+ .addbnt {
+  margin: 10px;
+  color: #fff;
+  background-color: #3e755f;
+  width: 50%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+
+.userdetails{
+
+}
+
+.userlabel{
+  width: 35%;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 1px solid #cccccc52;
+  padding: 5px;
+  height: 35px;
 }

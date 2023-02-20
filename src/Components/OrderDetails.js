@@ -3,7 +3,7 @@ import { Row, Col } from "react-bootstrap";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-
+import { URL } from "./Apis";
 const OrderDetails = () => {
   const { uid } = useParams();
   const [orders, setOrders] = useState([]);
@@ -14,8 +14,9 @@ const OrderDetails = () => {
 
   //console.log(order_id);
 
+  var getuseridsession = sessionStorage.getItem("useridsession");
     useEffect(() => {
-        fetch(`http://18.60.186.245:8080/api/v1/orderdetails/orderid/${get_order_id}`, {
+        fetch(`${URL}/api/v1/orderdetails/orderid/${get_order_id}`, {
         method: "GET",
       })
         .then((response) => response.json())
@@ -28,6 +29,7 @@ const OrderDetails = () => {
       <div className="Header">
         <Row className="section-row">
           <Col lg={6}>
+          <Link to="/"><span className="logout">Logout</span></Link>
             <div className="logo">
               <img src={logo} alt="logo"></img>
             </div>
@@ -57,6 +59,8 @@ const OrderDetails = () => {
           return (
             <>
               <div className="details">
+
+      
                 <p className="orderid">
                   <span>OrderID</span> :<span>{oitem.orderId}</span>
                 </p>
@@ -68,7 +72,7 @@ const OrderDetails = () => {
                   <span>{oitem.billingPricePerUnit}</span>
                 </p>
                 <p className="orderid">
-                  <span>orderPlaced</span> :<span>{oitem.orderPlaced}</span>
+                  <span>order Placed</span> :<span>{oitem.orderPlaced}</span>
                 </p>
                 <p className="orderid">
                   <span>Status</span> :<span>{oitem.orderApproved}</span>

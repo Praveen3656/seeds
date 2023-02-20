@@ -3,13 +3,16 @@ import { Row, Col } from "react-bootstrap";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { URL } from "./Apis";
 const Myorders = () => {
+
+  var getuseridsession = sessionStorage.getItem("useridsession");
+
   const [orders, setOrders] = useState([]);
 
   let navigate = useNavigate();
   useEffect(() => {
-    fetch("http://18.60.186.245:8080/api/v1/orders/", {
+    fetch(`${URL}/api/v1/orders/${getuseridsession}`, {
       method: "GET",
     })
       .then((response) => response.json())
@@ -17,7 +20,6 @@ const Myorders = () => {
   }, [0]);
 
   const orderdetails = (e,oid) =>{
-
     const orderid = oid;
     //navigate(`/Home/cat_id=${e}`);
     navigate(`/OrderDetails/orderid=${orderid}`);
@@ -29,6 +31,7 @@ const Myorders = () => {
       <div className="Header">
         <Row className="section-row">
           <Col lg={6}>
+          <Link to="/"><span className="logout">Logout</span></Link>
             <div className="logo">
               <img src={logo} alt="logo"></img>
             </div>
@@ -37,9 +40,9 @@ const Myorders = () => {
         </Row>
       </div>
       <div className="orders">
-        <p className="title">My Orders</p>
+        <center><p className="title">My Orders</p></center>
         <span className="back">
-          <Link to="/">Home</Link>
+          <Link to="/Header">Home</Link>
         </span>
       </div>
       
@@ -49,10 +52,10 @@ const Myorders = () => {
             <>
               <div className="details">
                 <p className="orderid">
-                  <span>user</span> :<span>{oitem.userId}</span>
+                  <span>User</span> :<span>{oitem.userId}</span>
                 </p>
                 <p className="orderid">
-                  <span>OrdetID</span> :<span>{oitem.orderId}</span>
+                  <span>Order ID</span> :<span>{oitem.orderId}</span>
                 </p>
                 <p className="orderid">
                   <span>Ordered Date</span> :<span>{oitem.orderCreatedAt}</span>

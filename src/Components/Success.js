@@ -17,7 +17,7 @@ const Success = () => {
       </div>
       <p className="emptycart">
         <center>
-          Order place Successfully <br />
+        Order Placed Successfully <br />
           <Link to="/Myorders">Orders</Link>
         </center>
       </p>
